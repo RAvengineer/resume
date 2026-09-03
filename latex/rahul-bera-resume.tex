@@ -54,7 +54,7 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
+      \textbf{#1} & \textit{\small #2} \\
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -113,20 +113,20 @@
 \section{Professional Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {\href{https://quillbot.com}{Quillbot}}{April 2026 - Present}
-      {Software Development Engineer II}{Remote}
+      {\href{https://quillbot.com}{Quillbot}}{Remote}
+      {Software Development Engineer II}{April 2026 - Present}
       \resumeItemListStart
+        \resumeItem{Fixed production \textbf{Airflow + Gemini feedback pipeline} processing \textbf{10K customer feedback/day}, resolving malformed Gemini responses and outdated model issues.}
         \resumeItem{Built \textbf{AI-powered PageQ page generation} end-to-end using \textbf{Gemini Flash 2.5 \& GPT Image 1.5}, generating SEO copy and images, reducing page creation workflow from \textbf{1 hour to 15 min}.}
-        \resumeItem{Engineered \textbf{AI creative-suite tools} for background replacement and image expansion, integrating React/TypeScript UI, APIs, BullMQ jobs, and AI image microservices.}
         \resumeItem{Delivered \textbf{August 2026 sale experience} as sole engineer, implementing sale UI, remote-configured controls, and experiment guards, reaching \textbf{3.5M users and \$326K revenue}.}
+        \resumeItem{Engineered \textbf{AI creative-suite tools} for background replacement and image expansion, integrating React/TypeScript UI, APIs, BullMQ jobs, and AI image microservices.}
         \resumeItem{Modernized \textbf{StyleQ color-picker swatch component} with HEX and gradient support, replacing \texttt{react-color} with \texttt{react-colorful}, adopted across \textbf{4 products}.}
         % \resumeItem{Cleaned experimentation technical debt, removing \textbf{113 stale experiments} from the platform and \textbf{42} from the codebase.}
-        \resumeItem{Fixed production \textbf{Airflow + Gemini feedback pipeline} processing \textbf{10K customer feedback/day}, resolving malformed Gemini responses and outdated model issues.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {\href{https://gynoveda.com}{Gynoveda}}{March 2025 - March 2026}
-      {Senior Software Engineer}{Mumbai, India}
+      {\href{https://gynoveda.com}{Gynoveda}}{Mumbai, India}
+      {Senior Software Engineer}{March 2025 - March 2026}
       \resumeItemListStart
         \resumeItem{Architected and implemented \textbf{ETL pipelines} for FHIR data using \textbf{AWS SQS, Lambda, RDS Postgres}, and \textbf{S3}, enabling business analytics on EHR data.}
         \resumeItem{Migrated website hosting from EC2 to \textbf{AWS AppRunner}, dockerized the application, and pushed images to \textbf{AWS ECR}, thus reducing website crashes during high traffic events to zero.}
@@ -137,8 +137,8 @@
       \resumeItemListEnd
 
     \resumeSubheading
-      {\href{https://batterysmart.in}{BatterySmart}}{April 2024 - March 2025}
-      {SDE 2 - Full-Stack Developer}{Gurugram, India}
+      {\href{https://batterysmart.in}{BatterySmart}}{Gurugram, India}
+      {SDE 2 - Full-Stack Developer}{April 2024 - March 2025}
       \resumeItemListStart
         \resumeItem{Pioneered \textbf{NFC Smart Card} integration for driver identification and battery swaps, boosting station throughput by 15\% \& established a Card - Driver mapping system to map 5000+ drivers at 100+ stations.}
         \resumeItem{Led the \textbf{TMS Revamp} by designing a rule engine with \textbf{AASM for state machines}, a hierarchical task structure, and automated TAT/SLA calculation in Ruby on Rails.}
@@ -147,9 +147,8 @@
         \resumeItem{Implemented \textbf{Aadhaar masking} using \textit{IDfy} and created \textbf{Grafana dashboards} for service monitoring.}
       \resumeItemListEnd
       
-    \resumeSubheading
-      {\href{https://batterysmart.in}{BatterySmart}}{November 2022 - March 2024}
-      {SDE 1 - Full-Stack Developer}{Gurugram, India}
+    \resumeSubSubheading
+      {SDE 1 - Full-Stack Developer}{November 2022 - March 2024}
       \resumeItemListStart
         \resumeItem{Pioneered a \textbf{Content Management System (CMS)} for the Partner application, delivering training videos to over 1000 on-field agents.}
         \resumeItem{Developed a Flutter App (\textbf{SmartShip}) from scratch using \textbf{GetX \& BLoC}, with features like Google Maps, Firebase notifications, and i18n.}
@@ -161,24 +160,15 @@
       \resumeItemListEnd
 
     \resumeSubheading
-      {Questt}{September 2022 - November 2022}
-      {SDE 1 - Flutter Developer}{Bengaluru, India}
-      \resumeItemListStart
-        \resumeItem{Fixed performance bugs and tech debt in the existing mobile application, which was awarded \textbf{Best App of the Year (2022)} by Public Choice on Google Play Store.}
-        \resumeItem{Developed a portal to compute aggregate results for teachers using \textbf{NextJS, NestJS, and MongoDB}.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {\href{https://speakx.com}{SpeakX (previously YellowClass)}}{June 2022 - August 2022}
-      {SDE-2 - Flutter Developer}{Gurugram, India}
+      {\href{https://speakx.com}{SpeakX (previously YellowClass)}}{Gurugram, India}
+      {SDE-2 - Flutter Developer}{June 2022 - August 2022}
       \resumeItemListStart
         \resumeItem{Added support for in-app \textbf{picture-in-picture video} and revamped the full-screen class player.}
         \resumeItem{Replicated app dashboard on the web using \textbf{NextJS} and created a YouTube filters-like feature.}
       \resumeItemListEnd
       
-    \resumeSubheading
-      {\href{https://speakx.com}{SpeakX (previously YellowClass)}}{October 2021 - May 2022}
-      {Intern - Flutter Developer}{Gurugram, India}
+    \resumeSubSubheading
+      {Intern - Flutter Developer}{October 2021 - May 2022}
       \resumeItemListStart
         \resumeItem{Developed quiz-based games with a leaderboard and a barebones replication of \textbf{YouTube Shorts}.}
         \resumeItem{Laid the foundation for video autoplay on cards and improved animations, reducing jank on the feed using \textbf{BLoC pattern \& GraphQL}.}
