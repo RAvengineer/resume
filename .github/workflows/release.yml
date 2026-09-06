@@ -1,0 +1,56 @@
+name: Release Resume PDF
+
+on:
+  push:
+    tags:
+      - '*'
+
+env:
+  # Configurable variable for the final output filename
+  FINAL_PDF_NAME: rahul-bera-resume.pdf
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          working_directory: latex
+
+      - name: Prepare PDF for Release
+        run: |
+          echo "Preparing the generated PDF for release..."
+          
+          # GitHub Action typically outputs 'resume.pdf' when 'resume.tex' is the root file.
+          # If your VSCode settings.json config is also somehow used or outputting directly 
+          # as 'rahul-bera-resume.pdf', this script handles both cases.
+          if [ -f "latex/resume.pdf" ]; then
+            echo "Found latex/resume.pdf, renaming to ${FINAL_PDF_NAME}"
+            cp latex/resume.pdf "${FINAL_PDF_NAME}"
+          elif [ -f "latex/${FINAL_PDF_NAME}" ]; then
+            echo "Found latex/${FINAL_PDF_NAME}, copying for release"
+            cp "latex/${FINAL_PDF_NAME}" "${FINAL_PDF_NAME}"
+          else
+            echo "Error: Generated PDF not found in the latex directory."
+            exit 1
+          fi
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.FINAL_PDF_NAME }}
+          name: "Resume Build: ${{ github.ref_name }}"
+          body: |
+            Automated PDF release for resume tag **${{ github.ref_name }}**.
+            
+            This release provides the compiled snapshot. Please find the attached `${{ env.FINAL_PDF_NAME }}` below.
+          draft: false
+          prerelease: false
