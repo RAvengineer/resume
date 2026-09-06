@@ -13,7 +13,11 @@ The repository follows a branch-per-variant model:
 The resume is built using LaTeX. The primary source file is located at `latex/resume.tex`.
 
 ### Prerequisites
-- A LaTeX distribution (e.g., TeX Live, MacTeX, MiKTeX).
+- A LaTeX distribution (e.g., TeX Live, MacTeX, MiKTeX). 
+  - On macOS, you can install MacTeX via Homebrew:
+    ```bash
+    brew install --cask mactex
+    ```
 - [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension for VSCode (Recommended).
 
 ### Building
@@ -56,3 +60,17 @@ The GitHub Actions workflow will automatically:
 - Create a GitHub Release and attach the PDF as an asset.
 
 You can then download or link directly to the PDF from the GitHub Releases page.
+
+### Maintaining a `latest` Release
+
+To provide a stable URL that always points to your most current resume, you can maintain a floating `latest` tag. When you are ready to update the main link:
+
+```bash
+# Tag the current commit as 'latest', overriding any existing 'latest' tag locally
+git tag -f latest
+
+# Force push the 'latest' tag to GitHub
+git push origin -f latest
+```
+
+This will trigger the pipeline and create/update a release tagged `latest`. You can then share the static asset link from this release, which will continually update whenever you move the `latest` tag.
